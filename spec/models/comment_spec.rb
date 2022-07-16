@@ -7,7 +7,7 @@ RSpec.describe Comment, type: :model do
     before { subject.save }
 
     it 'Find author_id to be an integer' do
-      subject.author_id = 'henry'
+      subject.author_id = 'ismail'
       expect(subject).to_not be_valid
     end
 
@@ -17,7 +17,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'Find post_id to be an integer' do
-      subject.post_id = 'henry'
+      subject.post_id = 'ismail'
       expect(subject).to_not be_valid
     end
 
