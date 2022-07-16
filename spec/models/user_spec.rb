@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe User, type: :model do
   describe 'Validaiton tests for user' do
     subject { User.new(name: 'ismail', photo: 'profile.png', bio: 'learning rails ', posts: 0) }
@@ -29,7 +28,7 @@ RSpec.describe User, type: :model do
   describe 'Test for recent comments on posts' do
     subject do
       ismail = User.new(name: 'ismail', photo: 'profile.png',
-                       bio: 'programmer', posts: 0)
+                        bio: 'programmer', posts: 0)
       Post.new(title: 'My best friend', text: 'He will be unvailed at the end of my program at Microverse',
                comment_counter: 3, like_counter: 3, author_id: ismail.id)
     end

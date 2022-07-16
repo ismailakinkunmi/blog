@@ -4,7 +4,7 @@ RSpec.describe Post, type: :model do
   describe 'Validaiton for post' do
     subject do
       ismail = User.new(name: 'ismail', photo: 'profile.png',
-                       bio: 'programmer', posts_counter: 0)
+                        bio: 'programmer', posts_counter: 0)
       Post.new(title: 'My best friend', text: 'He will be unvailed at the end of my program at Microverse',
                comment_counter: 3, like_counter: 3, author_id: ismail.id)
     end
@@ -23,7 +23,7 @@ RSpec.describe Post, type: :model do
 
     it 'Should have comments counter not be less than zero' do
       subject.comment_counter = -1
-    expect(subject).to_not be_valid
+      expect(subject).to_not be_valid
     end
 
     it 'Should have likes counter not be less than zero' do
