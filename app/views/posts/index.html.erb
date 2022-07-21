@@ -1,1 +1,19 @@
 <h1>list of posts for a given user</h1>
+
+<div>
+  <p><%=@user.name%></p>
+  <p>Number of posts: <%= @user.post_counter %></p>
+</div>
+
+<div>
+  <% @posts.each do|post| %>   
+    <%= link_to user_post_path(post.author_id, post.id) do %>
+      <h4> <%= post.title %> </h4>
+    <% end %>
+
+    <p><%= post.text %> </p>
+    <p>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>
+  <% end %>
+</div>
+
+<button>pagination</button>
