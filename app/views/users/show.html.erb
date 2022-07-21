@@ -1,1 +1,16 @@
 <h1>Get user by id</h1>
+
+<div>
+  <h4><%= @user.name %> </h4>
+  <p>Bio: <%= @user.bio %> </p>
+</div>
+<div>
+  <% @user.last_three_posts.each_with_index do |post| %>
+    <h4><%= post.title %> </h4>
+  <p>text: <%= post.text %> </p>
+  <span>Comments: <%= post.comment_counter %>, Likes:<%= post.like_counter %> </span>
+  <% end %>
+</div>
+
+<button><%= link_to "See all posts",user_posts_path(@user.id) %></button>
+   
