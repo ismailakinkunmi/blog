@@ -1,13 +1,18 @@
-<h1>list of all users</h1>
+<h1 class='header'>list of all users</h1>
 
-<div>
-  <% @users.each do |user| %>
-  <h4>
-   <%= link_to user_path(user.id) do %>
-     <%= user.name %>
-    <% end %>  
-  </h4>
-   
-    <span>Number of posts: <%= user.post_counter %> </span>
-  <% end %>
-</div> 
+<% @users.each do |user| %>
+  <div class='user'>
+    <div>
+     <%= image_tag('user.photo.jpg', alt: 'user image') %>
+    </div>
+
+    <div class='user_name'>
+      <h5 class='name'>
+      <%= link_to user_path(user.id) do %>
+        <%= user.name %>
+        <% end %>    
+      </h5>           
+      <p class='counter' >Number of posts: <%= user.post_counter %> </p>  
+    </div>
+  </div> 
+<% end %>

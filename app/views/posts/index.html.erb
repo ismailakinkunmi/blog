@@ -1,19 +1,44 @@
 <h1>list of posts for a given user</h1>
+<div class='user_posts'>
 
-<div>
-  <p><%=@user.name%></p>
-  <p>Number of posts: <%= @user.post_counter %></p>
-</div>
+  <div class='user'>
+    <div>
+      <%= image_tag('user.photo.jpg', alt: 'user image') %>
+    </div>
+    <div class='user_name'>
+      <p class='name'><%=@user.name%></p>
+      <p class='counter'>Number of posts: <%= @user.post_counter %></p>
+    </div>
+  </div>
 
-<div>
-  <% @posts.each do|post| %>   
+
+
+  <% @posts.each.with_index(1) do|post, index| %>
+
+  <div class='post'>
     <%= link_to user_post_path(post.author_id, post.id) do %>
-      <h4> <%= post.title %> </h4>
-    <% end %>
+      <h4> Post #<%= index %> <%= post.title %> </h4>              
+    <% end %> 
 
-    <p><%= post.text %> </p>
-    <p>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>
+    <p class='text'><%= post.text %> </p>
+    <p class='post_counter'>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>   
+   
+  </div>
+
+   <div class= "comment_list">
+    <% post.comment.each do |comment|%>
+     <p><%= comment.author.name %>: <%=comment.text%></p>
+    <%end%>
+  </div> 
+
+    
   <% end %>
-</div>
 
-<button>pagination</button>
+
+
+
+
+
+
+  <button>pagination</button>
+</div>

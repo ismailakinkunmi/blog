@@ -18,4 +18,6 @@ class Post < ApplicationRecord
   def update_post_counter
     author.increment!(:post_counter)
   end
+
+  
 end
