@@ -78,7 +78,6 @@ img {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: fit-content;
   margin-bottom: 16px;
 }
 
@@ -101,6 +100,5 @@ img {
 .comment_list {
   width: 294px;
   padding: 8px;
-  height: fit-content;
   margin-bottom: 16px;
 }
