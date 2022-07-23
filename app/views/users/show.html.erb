@@ -4,36 +4,32 @@
 <div class='details'>
   <div class='user'>
     <div>
-     <%= image_tag('user.photo.jpg', alt: 'user image') %>
+      <%= image_tag('user.photo.jpg', alt: 'user image') %>
     </div>
 
     <div class='user_name'>
-      <h5 class='name'>    
-        <%= @user.name %>
-        
-      </h5>           
+      <h5 class='name'> <%= @user.name %> </h5>           
       <p class='counter' >Number of posts: <%= @user.post_counter %> </p>  
     </div> 
-</div>
+  </div>
 
-<div class='bio'>
-  <h6>Bio</h6>
-  <p><%= @user.bio %> </p>
-</div>
+  <div class='bio'>
+    <h6>Bio</h6>
+    <p><%= @user.bio %> </p>
+  </div>
 
   <% @user.posts.each.with_index(1) do |post, index| %>
-<div class='post'>
-  <%= link_to user_post_path(post.author_id, post.id) do %>
-      <h4 class='title'>  <%= post.title %> #<%= index %> </h4>
-  <% end %>
+    <div class='post'>
+      <%= link_to user_post_path(post.author_id, post.id) do %>
+        <h4 class='title'>  <%= post.title %> #<%= index %> </h4>
+      <% end %>
 
-  <p class='text'>text: <%= post.text %> </p>
-  <span class='post_counter'>Comments: <%= post.comment_counter %>, Likes:<%= post.like_counter %> </span>
-</div>
+      <p class='text'>text: <%= post.text %> </p>
+      <span class='post_counter'>Comments: <%= post.comment_counter %>, Likes:<%= post.like_counter %> </span>
+    </div>
   <% end %>
-
-<button><%= link_to "See all posts",user_posts_path(@user.id) %></button>
-   
+  
+  <button><%= link_to "See all posts",user_posts_path(@user.id) %></button>   
 
 </div>
 
