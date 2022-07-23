@@ -1,44 +1,20 @@
-<h1>list of posts for a given user</h1>
-<div class='user_posts'>
-
-  <div class='user'>
-    <div>
-      <%= image_tag('user.photo.jpg', alt: 'user image') %>
-    </div>
-    <div class='user_name'>
-      <p class='name'><%=@user.name%></p>
-      <p class='counter'>Number of posts: <%= @user.post_counter %></p>
-    </div>
-  </div>
-
-
-
-  <% @posts.each.with_index(1) do|post, index| %>
-
-  <div class='post'>
-    <%= link_to user_post_path(post.author_id, post.id) do %>
-      <h4> Post #<%= index %> <%= post.title %> </h4>              
-    <% end %> 
-
-    <p class='text'><%= post.text %> </p>
-    <p class='post_counter'>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>   
-   
-  </div>
-
-   <div class= "comment_list">
-    <% post.comment.each do |comment|%>
-     <p><%= comment.author.name %>: <%=comment.text%></p>
-    <%end%>
-  </div> 
-
+<section class="posts-home">
+  <%= render :partial => 'partials/image_and_user', locals: { user: @user } %>
+  <ul class="user-posts">
+    <% @posts.reverse.each do |post| %>
+      <%= link_to user_post_path(@user.id, post.id), id: "user_post#{post.id}", :class => 'link' do %>
+        <%= render :partial => 'partials/post', locals: { post: post } %>
+        <% if post.comments.length > 0 %>
+          <div class="comments-wrapper">
+            <%= render :partial => 'partials/comments', locals: { comments: post.comments.slice(0, 5), all: true } %>
+          </div>
+        <% end%>
+      <% end %>
+    <% end %>
     
-  <% end %>
-
-
-
-
-
-
-
-  <button>pagination</button>
-</div>
+  </ul>
+  
+  <button class="pagination-btn">
+    <%= link_to "Create post", new_user_post_path %>
+  </button>
+</section>

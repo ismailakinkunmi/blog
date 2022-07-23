@@ -1,104 +1,148 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.show-container {
+  margin-top: 50px;
 }
 
-body {
-  padding: 40px;
+.users,
+.user-posts {
+  list-style-type: none;
 }
 
-.header {
-  margin-bottom: 16px;
+.users a {
+  text-decoration: none;
+}
+
+.users a:visited {
+  color: black;
+}
+
+.users a:link {
+  color: black;
+}
+
+.users a:active {
+  color: black;
 }
 
 .user {
   display: flex;
-  gap: 24px;
-  margin: 16px 0;
-}
-
-.user_name {
-  width: 200px;
-  height: 70px;
-  display: flex;
-  justify-content: space-around;
-  border-style: solid;
-  position: relative;
-  padding: 15px 5px;
-}
-
-.name {
-  font-size: larger;
-}
-
-a {
-  text-decoration: none;
-}
-
-img {
-  height: 70px;
-  width: 70px;
-}
-
-.counter {
-  font-size: smaller;
-  padding-top: 20px;
-}
-
-.details,
-.user_posts {
-  display: flex;
-  flex-direction: column;
-  width: fit-content;
-  align-items: center;
-  height: auto;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  margin: 0 6% 40px;
 }
 
 .bio {
-  width: 294px;
-  border-style: solid;
-  padding: 0 5px 8px 5px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 5%;
+  margin: 7% 6%;
+  padding: 10px;
+  border: 2px solid;
+}
+
+.avatar {
+  width: 20%;
+}
+
+.name-posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid;
+  width: 75%;
+  padding: 1%;
+}
+
+.username {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+.num-of-posts {
+  text-align: right;
+  font-weight: bolder;
+}
+
+.posts-home {
+  margin-top: 50px;
+}
+
+.posts-container,
+.user-posts {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+  margin: 7% 6% 0;
+  padding: 0;
 }
 
 .post {
-  width: 294px;
-  padding: 0 7px 5px 7px;
-  margin-bottom: 16px;
-  border-style: solid;
+  list-style-type: none;
+  border: 2px solid;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+
+.comments-likes {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.see-all-btn {
+  display: flex;
+  margin: auto;
+  margin-bottom: 50px;
+  padding: 0;
+}
+
+.user-comments {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 5px;
+  margin-bottom: 30px;
 }
 
-.post_counter {
+.pagination-btn {
   display: flex;
-  justify-content: right;
-  font-size: smaller;
+  margin: auto;
+  margin-bottom: 50px;
 }
 
-.comment_list {
-  width: 294px;
-  padding: 8px;
-  margin-bottom: 16px;
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.name-comments-likes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comments-wrapper {
+  border: 2px solid;
+  margin-top: -26px;
+  margin-bottom: 30px;
+}
+
+.top {
+  border: 2px solid;
+  margin: 7% 6% 0;
+  padding: 5px;
+}
+
+.comment-list {
+  border: 2px solid;
+  margin: 3px 6%;
+}
+
+.comment-box {
+  margin: 2% 6% 0;
+}
+
+.likes-box {
+  margin: 1% 6% 0;
 }

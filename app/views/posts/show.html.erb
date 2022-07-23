@@ -1,20 +1,17 @@
-<h1>Get post by id</h1>
 
-
-
-<div >
- 
-  <div class="post">
-    <div class="post_comments">
-      <h4><%=@post.title%> by: <%=@post.author.name%></h4>
-      <span>Comments: <%=@post.comment_counter%>, Likes: <%=@post.like_counter%></span>
+<section class="posts-details">
+  <div class="top">
+    <div class="name-comments-likes">
+      <p class="name"><strong><%= @post.title %></strong> by <strong><%= @post.author.name %></strong></p>
+      <p class="comments-likes">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %> likes</p>
     </div>
-    <p class='text'><%=@post.text%></p>
+    <p class="post-text"><%= @post.text %></p>
   </div>
-
-  <div class= "comments">
-    <%@post.comment.each do |comment|%>
-     <p><%= comment.author.name %>: <%=comment.text%></p>
-    <%end%>
+  <% if @post.comments.length > 0 %>
+  <div class="comment-list">
+    <%= render :partial => 'partials/comments', locals: { comments: @post.comments } %>
   </div>
-</div>
+  <% end %>
+  <%= render "comments/form" %>
+  <%= render "likes/form" %>
+</section>
