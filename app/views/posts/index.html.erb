@@ -11,34 +11,22 @@
     </div>
   </div>
 
-
-
   <% @posts.each.with_index(1) do|post, index| %>
+    <div class='post'>
+      <%= link_to user_post_path(post.author_id, post.id) do %>
+        <h4> Post #<%= index %> <%= post.title %> </h4>              
+      <% end %> 
 
-  <div class='post'>
-    <%= link_to user_post_path(post.author_id, post.id) do %>
-      <h4> Post #<%= index %> <%= post.title %> </h4>              
-    <% end %> 
+      <p class='text'><%= post.text %> </p>
+      <p class='post_counter'>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>   
+    </div>
 
-    <p class='text'><%= post.text %> </p>
-    <p class='post_counter'>Comments:<%= post.comment_counter %>, Likes: <%= post.like_counter %> </p>   
-   
-  </div>
-
-   <div class= "comment_list">
-    <% post.comment.each do |comment|%>
-     <p><%= comment.author.name %>: <%=comment.text%></p>
-    <%end%>
-  </div> 
-
-    
+    <div class= "comment_list">
+      <% post.comment.each do |comment|%>
+      <p><%= comment.author.name %>: <%=comment.text%></p>
+      <%end%>
+    </div>    
   <% end %>
-
-
-
-
-
-
 
   <button>pagination</button>
 </div>

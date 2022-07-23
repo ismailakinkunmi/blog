@@ -3,13 +3,12 @@
 <% @users.each do |user| %>
   <div class='user'>
     <div>
-     <%= image_tag('user.photo.jpg', alt: 'user image') %>
+      <%= image_tag('user.photo.jpg', alt: 'user image') %>
     </div>
 
     <div class='user_name'>
-      <h5 class='name'>
-      <%= link_to user_path(user.id) do %>
-        <%= user.name %>
+      <h5 class='name'> <%= link_to user_path(user.id) do %>
+          <%= user.name %>
         <% end %>    
       </h5>           
       <p class='counter' >Number of posts: <%= user.post_counter %> </p>  
