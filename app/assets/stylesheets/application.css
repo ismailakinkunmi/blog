@@ -1,148 +1,115 @@
-.show-container {
-  margin-top: 50px;
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --clr-white: #fff;
+  --clr-blue: #007bfc;
+  --clr-black: #212529;
+  --clr-turkwaz: #1ba2b9;
+  --clr-light-border: #1481fc;
+  --clr-red: #dd3646;
+  --clr-gray: #e1e1e1;
+
+  /* font families */
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --ff-roboto-sl: 'Roboto Slab', serif;
 }
 
-.users,
-.user-posts {
-  list-style-type: none;
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
-.users a {
-  text-decoration: none;
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--ff-roboto-sl);
+  color: var(--clr-black);
+  scroll-behavior: smooth;
+  background: var(--clr-body);
+  padding-inline: 2rem;
+  padding-block: 1rem;
 }
 
-.users a:visited {
-  color: black;
+/* Utility classes */
+
+.hidden {
+  display: none !important;
 }
 
-.users a:link {
-  color: black;
+.no-scroll {
+  overflow: hidden !important;
 }
 
-.users a:active {
-  color: black;
-}
-
-.user {
+.flex {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: space-between;
-  margin: 0 6% 40px;
+  gap: var(--gap, 1rem);
 }
 
-.bio {
-  display: flex;
+.flex--column {
   flex-direction: column;
-  gap: 5%;
-  margin: 7% 6%;
-  padding: 10px;
-  border: 2px solid;
 }
 
-.avatar {
-  width: 20%;
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
 }
 
-.name-posts {
+main {
+  padding: 2.313rem 6.25rem;
+}
+
+.nav {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 2px solid;
-  width: 75%;
-  padding: 1%;
-}
-
-.username {
-  font-size: 2rem;
-  font-weight: bolder;
-}
-
-.num-of-posts {
-  text-align: right;
-  font-weight: bolder;
-}
-
-.posts-home {
-  margin-top: 50px;
-}
-
-.posts-container,
-.user-posts {
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5%;
-  margin: 7% 6% 0;
-  padding: 0;
-}
-
-.post {
-  list-style-type: none;
-  border: 2px solid;
-  padding: 5px;
-  margin-bottom: 30px;
-}
-
-.comments-likes {
-  text-align: right;
-  padding-right: 10px;
-}
-
-.see-all-btn {
-  display: flex;
-  margin: auto;
-  margin-bottom: 50px;
-  padding: 0;
-}
-
-.user-comments {
-  display: flex;
-  flex-direction: column;
   justify-content: flex-start;
-  list-style-type: none;
-  padding: 5px;
-  margin-bottom: 30px;
+  align-items: center;
+  gap: 1rem;
 }
 
-.pagination-btn {
-  display: flex;
-  margin: auto;
-  margin-bottom: 50px;
-}
+.user-details {
+  --gap: 3rem;
 
-.link {
-  color: black;
-  text-decoration: none;
-}
-
-.name-comments-likes {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  width: 100%;
 }
 
-.comments-wrapper {
-  border: 2px solid;
-  margin-top: -26px;
-  margin-bottom: 30px;
+.user-details h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: capitalize;
 }
 
-.top {
-  border: 2px solid;
-  margin: 7% 6% 0;
-  padding: 5px;
+.user-details p {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 5rem;
 }
 
-.comment-list {
-  border: 2px solid;
-  margin: 3px 6%;
+.btn--center {
+  margin-inline: auto;
+  max-width: 135px;
 }
 
-.comment-box {
-  margin: 2% 6% 0;
-}
-
-.likes-box {
-  margin: 1% 6% 0;
+.post-header {
+  justify-content: space-between;
+  align-items: center;
 }
