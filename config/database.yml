@@ -8,7 +8,7 @@ default: &default
 
 development:
   <<: *default
-  database: blog
+  database: rails-blog
   pool: 5
 
 # Warning: The database defined as "test" will be erased and
@@ -16,10 +16,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blog
+  database: rails-blog
 
 production:
   <<: *default
-  database: blog
+  database: rails-blog
   username: postgres
   password: password
