@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   after_save :update_post_counter
 
   validates :title, presence: true, length: { maximum: 250 }
-  # validates :comments_counter, :likes_counter, comparison: { greater_than_or_equal_to: 0 }, numericality: true
+  #validates :comments_counter, :likes_counter, comparison: { greater_than_or_equal_to: 0 }, numericality: true
 
   def self.update_user_posts_counter(author_id)
     u = User.find(author_id)
