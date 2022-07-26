@@ -1,0 +1,34 @@
+<div>
+  <img src="<%= @author.photo %>" alt="<%= @author.name %>" width="50" height="50">
+  <h2>
+    <%= @author.name %>
+  </h2>
+  <p>
+    Number of posts:  <%= @author.posts_counter %>
+  </p>
+</div>
+<%= link_to "Create new post", new_user_post_path(@author)  %>
+<% @posts.each do |post| %>
+  <div>
+  <%= link_to user_post_path(post.author, post) do %>
+    <p>
+      Post -<%= post.id %>
+    </p>
+  <% end %>
+    <h3>
+      <%= post.title %>
+    </h3>
+    <p> <%= post.text.truncate(100) %>... </p>
+    <p>Comments: <%= post.comments_counter %> Likes: <%= post.likes_counter %>  </p>
+  </div>
+  <% post.return_the_5_most_recent_comments.includes(:author).each do |comment| %>
+    <div>
+      <p>
+        <%= comment.author.name %>
+      </p>
+      <p>
+        <%= comment.text %>
+      </p>
+    </div>
+  <% end %>
+<% end %>
