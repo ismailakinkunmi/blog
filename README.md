@@ -27,9 +27,15 @@ cd blog
 
 In the project directory, you can run:
 
-**`http://localhost:3000/`**
+**`bundle install`** to install require tools for the project to run
+
+**`rails server`**
+
+**`http://localhost:3000/`** follow all the instruction
 
 **`run controllers file-name<actions> located in app folder`**
+
+**`Rspec spec`** to run all the test
 
 For more details, see [Ruby on Rails Guides (v7.0.3.1)](https://guides.rubyonrails.org/).
 
