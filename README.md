@@ -23,19 +23,23 @@ To get a clone of the project, run `git clone https://github.com/ismailakinkunmi
 cd blog
 ```
 
-### Available Scripts
+### Available Scripts To Run The Project
 
-In the project directory, you can run:
+**`congigure database.yml in config folder`**
 
-**`bundle install`** to install require tools for the project to run
+In the project directory, run:
 
-**`rails server`**
+**`bundle install`** You might need to change your ruby version inside the Gemfile
+
+**`rails server`** follow all the instruction to run migration and connect to database
 
 **`http://localhost:3000/`** follow all the instruction
 
+**`rails db:seed`** to populate database with a user
+
 **`run controllers file-name<actions> located in app folder`**
 
-**`Rspec spec`** to run all the test
+**`Rspec`** to run all the test located in ./spec/scenarios folder
 
 For more details, see [Ruby on Rails Guides (v7.0.3.1)](https://guides.rubyonrails.org/).
 
