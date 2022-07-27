@@ -11,7 +11,7 @@ RSpec.describe 'Posts index page', type: :feature do
     visit user_posts_path(@user)
   end
 
-  scenario 'displays User profile Picture' do
+  scenario 'displays User profile Picture' do    
     find('img[alt="Lilly"]')
   end
 
